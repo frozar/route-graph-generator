@@ -47,10 +47,12 @@ def pivot_to_pgr(source, cost_calculation_file_path, connection_work, connection
             target bigint,
             x1 double precision,
             y1 double precision,
+            z1 double precision,
             x2 double precision,
             y2 double precision,
+            z2 double precision,
             importance double precision DEFAULT 6,
-            the_geom geometry(Linestring,4326),
+            the_geom geometry(LinestringZ,4326),
             cleabs text,
             nom_1_gauche text,
             nom_1_droite text,
@@ -163,7 +165,7 @@ def pivot_to_pgr(source, cost_calculation_file_path, connection_work, connection
             chk int,
             ein int,
             eout int,
-            the_geom geometry(Point,4326)
+            the_geom geometry(PointZ,4326)
     );""".format(ways_table_name)
     logger.debug("SQL: {}".format(create_nodes))
     cursor_out.execute(create_nodes)
@@ -223,9 +225,11 @@ def pivot_to_pgr(source, cost_calculation_file_path, connection_work, connection
             'target_id as target',
             'x1',
             'y1',
+            'z1',
             'x2',
             'y2',
-            'ST_Length(geom) as length',
+            'z2',
+            'ST_3DLength(geom) as length',
             'length_m as length_m',
             'cleabs as cleabs',
             'importance as importance',
