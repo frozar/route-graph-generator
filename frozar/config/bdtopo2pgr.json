@@ -1050,14 +1050,14 @@
     "outputs": {
       "configuration": {
         "storage": {
-          "file": "/home/docker/data/resources/bdtopo-pgr.resource"
+          "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/data/resources/bdtopo-pgr.resource"
         }
       },
       "dirs": {
-        "dataDir":"/home/docker/data",
-        "dbConfigDir": "/home/docker/data",
-        "profileDir": "/home/docker/data",
-        "resourceDir": "/home/docker/data/resources"
+        "dataDir":"/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/data",
+        "dbConfigDir": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/data",
+        "profileDir": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/data",
+        "resourceDir": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/data/resources"
       },
       "sshConfig":{
         "host": "127.0.0.1",
