@@ -378,11 +378,11 @@ def pivot_to_pgr(source, cost_calculation_file_path, connection_work, connection
     profile_names = set([ cost['profile'] for cost in source["costs"]])
     st_execute = time.time()
 
-    for profile_name in profile_names:
-        logger.info("Cleaning isolated edges for profile {}...".format(profile_name))
-        clean_graph_query = "SELECT {0}.clean_graph('{1}')".format(schema, profile_name)
-        logger.info("SQL: {}".format(clean_graph_query))
-        cursor_isolated.execute(clean_graph_query)
+    # for profile_name in profile_names:
+    #     logger.info("Cleaning isolated edges for profile {}...".format(profile_name))
+    #     clean_graph_query = "SELECT {0}.clean_graph('{1}')".format(schema, profile_name)
+    #     logger.info("SQL: {}".format(clean_graph_query))
+    #     cursor_isolated.execute(clean_graph_query)
 
     et_execute = time.time()
     logger.info("Execution ended. Elapsed time : %s seconds." %(et_execute - st_execute))
