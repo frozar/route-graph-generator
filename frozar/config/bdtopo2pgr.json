@@ -35,14 +35,14 @@
     "resource": {
       "id": "bdtopo-pgr",
       "type": "pgr",
-      "description": "Données BDUNI v2.",
+      "description": "Données BDTOPO v3",
       "topology": {
-        "id": "base-bduni",
+        "id": "base-bdtopo",
         "type": "db",
-        "description": "Données issues de la BDUNI de l'IGN.",
+        "description": "Données issues de la BDTOPO de l'IGN.",
         "storage": {
           "base": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/output_base.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
             "schema": "public",
             "attributes": [
               {
@@ -223,7 +223,7 @@
           "id": "bdtopo-car-fastest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/output_base.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
             "costColumn": "cost_s_car",
             "rcostColumn": "reverse_cost_s_car"
           },
@@ -232,12 +232,12 @@
             "optimization": "fastest",
             "compute": {
               "storage": {
-                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
               },
               "configuration": {
                 "name": "cost_s_car",
                 "storage": {
-                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
                 }
               }
             }
@@ -247,7 +247,7 @@
           "id": "bdtopo-car-shortest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/output_base.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
             "costColumn": "cost_m_car",
             "rcostColumn": "reverse_cost_m_car"
           },
@@ -256,12 +256,12 @@
             "optimization": "shortest",
             "compute": {
               "storage": {
-                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
               },
               "configuration": {
                 "name": "cost_m_car",
                 "storage": {
-                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
                 }
               }
             }
@@ -271,7 +271,7 @@
           "id": "bdtopo-pedestrian-fastest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/output_base.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
             "costColumn": "cost_s_pedestrian",
             "rcostColumn": "reverse_cost_s_pedestrian"
           },
@@ -280,12 +280,12 @@
             "optimization": "fastest",
             "compute": {
               "storage": {
-                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
               },
               "configuration": {
                 "name": "cost_s_pedestrian",
                 "storage": {
-                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
                 }
               }
             }
@@ -295,7 +295,7 @@
           "id": "bdtopo-pedestrian-shortest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/output_base.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
             "costColumn": "cost_m_pedestrian",
             "rcostColumn": "reverse_cost_m_pedestrian"
           },
@@ -304,12 +304,12 @@
             "optimization": "shortest",
             "compute": {
               "storage": {
-                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
               },
               "configuration": {
                 "name": "cost_m_pedestrian",
                 "storage": {
-                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation_sample.json"
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
                 }
               }
             }
