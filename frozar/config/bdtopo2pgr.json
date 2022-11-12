@@ -42,7 +42,7 @@
         "description": "Données issues de la BDTOPO de l'IGN.",
         "storage": {
           "base": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json",
             "schema": "public",
             "attributes": [
               {
@@ -223,7 +223,7 @@
           "id": "bdtopo-car-fastest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json",
             "costColumn": "cost_s_car",
             "rcostColumn": "reverse_cost_s_car"
           },
@@ -247,7 +247,7 @@
           "id": "bdtopo-car-shortest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json",
             "costColumn": "cost_m_car",
             "rcostColumn": "reverse_cost_m_car"
           },
@@ -271,7 +271,7 @@
           "id": "bdtopo-pedestrian-fastest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json",
             "costColumn": "cost_s_pedestrian",
             "rcostColumn": "reverse_cost_s_pedestrian"
           },
@@ -295,7 +295,7 @@
           "id": "bdtopo-pedestrian-shortest-pgr",
           "type": "pgr",
           "storage": {
-            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/db_config_output.json",
+            "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json",
             "costColumn": "cost_m_pedestrian",
             "rcostColumn": "reverse_cost_m_pedestrian"
           },
