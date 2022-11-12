@@ -142,19 +142,6 @@ $$ LANGUAGE SQL;
 CREATE TEMP TABLE bduni_non_com_tmp AS
 SELECT * FROM non_communication_run;
 
--- SELECT current_database();
-
--- SELECT
---     table_schema,  table_name
--- FROM
---     information_schema.tables
--- WHERE
---     table_type = 'BASE TABLE'
--- AND
---     table_schema NOT IN ('pg_catalog', 'information_schema');
-
--- SELECT * FROM troncon_de_route_run;
-
 
 -- ############################
 -- REMPLISSAGE DE BDUNI_TRONCON
