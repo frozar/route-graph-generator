@@ -16,6 +16,14 @@ pivot=# CREATE EXTENSION postgres_fdw;
 pivot=# CREATE EXTENSION PostGIS;
 ```
 
+Dans le cas d'une convertion vers une base de données pgRouting, les extensions SQL `postgres_fdw`, `PostGIS` et `pgRouting` doivent être installées sur la base de données de destination, `pgrouting` par exemple :
+
+```sql
+pgrouting=# CREATE EXTENSION postgres_fdw;
+pgrouting=# CREATE EXTENSION PostGIS;
+pgrouting=# CREATE EXTENSION pgRouting;
+```
+
 ## Installation
 
 Pour installer les commandes de génération de données, lancer la commande suivante à la racine du projet :
