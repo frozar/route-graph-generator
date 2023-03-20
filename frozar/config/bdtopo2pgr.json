@@ -15,17 +15,20 @@
       {
         "id": "base_pivot",
         "type": "bdd",
-        "configFile": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_pivot.json"
+        "configFile": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_pivot.json",
+        "schema": "public"
       },
       {
         "id": "bdtopo",
         "type": "bdd",
-        "configFile": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_input.json"
+        "configFile": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_input.json",
+        "schema": "public"
       },
       {
         "id": "base_sortie",
         "type": "bdd",
-        "configFile": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json"
+        "configFile": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json",
+        "schema": "public"
       }
     ],
     "workingSpace": {
@@ -35,15 +38,278 @@
     "resource": {
       "id": "bdtopo-pgr",
       "type": "pgr",
-      "description": "Données BDTOPO v3",
-      "topology": {
+      "description": "Données BDTOPO v3.3",
+      "sources": [
+        {
+          "id": "base-bdtopo",
+          "description":"Données issues de la BDTOPO de l'IGN.",
+          "type": "db",
+          "projection": "EPSG:4326",
+          "bbox": "-180,-90,180,90",
+          "mapping": {
+            "source": {
+              "baseId": "bdtopo"
+            },
+            "conversion": {
+              "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/data/bdtopo_v3.3.sql",
+              "file_old": "/home/frozar/wk/flaxib/wk/route-graph-generator/sql/bdtopo_convert.sql"
+            }
+          },
+          "storage": {
+            "base": {
+              "baseId": "base_sortie",
+              "attributes": [
+                {
+                  "key": "name",
+                  "column": "way_names",
+                  "default": "false"
+                },
+                {
+                  "key": "nom_1_gauche",
+                  "column": "nom_1_gauche",
+                  "default": "true"
+                },
+                {
+                  "key": "nom_1_droite",
+                  "column": "nom_1_droite",
+                  "default": "true"
+                },
+                {
+                  "key": "cpx_numero",
+                  "column": "cpx_numero",
+                  "default": "true"
+                },
+                {
+                  "key": "cpx_toponyme_route_nommee",
+                  "column": "cpx_toponyme_route_nommee",
+                  "default": "true"
+                },
+                {
+                  "key": "cleabs",
+                  "column": "cleabs",
+                  "default": "false"
+                },
+                {
+                  "key": "nature",
+                  "column": "nature",
+                  "default": "false"
+                },
+                {
+                  "key": "importance",
+                  "column": "importance",
+                  "default": "false"
+                },
+                {
+                  "key": "position_par_rapport_au_sol",
+                  "column": "position_par_rapport_au_sol",
+                  "default": "false"
+                },
+                {
+                  "key": "nombre_de_voies",
+                  "column": "nombre_de_voies",
+                  "default": "false"
+                },
+                {
+                  "key": "largeur_de_chaussee",
+                  "column": "largeur_de_chaussee",
+                  "default": "false"
+                },
+                {
+                  "key": "itineraire_vert",
+                  "column": "itineraire_vert",
+                  "default": "false"
+                },
+                {
+                  "key": "sens_de_circulation",
+                  "column": "sens_de_circulation",
+                  "default": "false"
+                },
+                {
+                  "key": "bande_cyclable",
+                  "column": "bande_cyclable",
+                  "default": "false"
+                },
+                {
+                  "key": "reserve_aux_bus",
+                  "column": "reserve_aux_bus",
+                  "default": "false"
+                },
+                {
+                  "key": "urbain",
+                  "column": "urbain",
+                  "default": "false"
+                },
+                {
+                  "key": "vitesse_moyenne_vl",
+                  "column": "vitesse_moyenne_vl",
+                  "default": "false"
+                },
+                {
+                  "key": "acces_vehicule_leger",
+                  "column": "acces_vehicule_leger",
+                  "default": "false"
+                },
+                {
+                  "key": "acces_pieton",
+                  "column": "acces_pieton",
+                  "default": "false"
+                },
+                {
+                  "key": "nature_de_la_restriction",
+                  "column": "nature_de_la_restriction",
+                  "default": "false"
+                },
+                {
+                  "key": "restriction_de_hauteur",
+                  "column": "restriction_de_hauteur",
+                  "default": "false"
+                },
+                {
+                  "key": "restriction_de_poids_total",
+                  "column": "restriction_de_poids_total",
+                  "default": "false"
+                },
+                {
+                  "key": "restriction_de_poids_par_essieu",
+                  "column": "restriction_de_poids_par_essieu",
+                  "default": "false"
+                },
+                {
+                  "key": "restriction_de_largeur",
+                  "column": "restriction_de_largeur",
+                  "default": "false"
+                },
+                {
+                  "key": "restriction_de_longueur",
+                  "column": "restriction_de_longueur",
+                  "default": "false"
+                },
+                {
+                  "key": "matieres_dangereuses_interdites",
+                  "column": "matieres_dangereuses_interdites",
+                  "default": "false"
+                },
+                {
+                  "key": "insee_commune_gauche",
+                  "column": "insee_commune_gauche",
+                  "default": "false"
+                },
+                {
+                  "key": "insee_commune_droite",
+                  "column": "insee_commune_droite",
+                  "default": "false"
+                },
+                {
+                  "key": "cpx_numero_route_europeenne",
+                  "column": "cpx_numero_route_europeenne",
+                  "default": "false"
+                },
+                {
+                  "key": "cpx_classement_administratif",
+                  "column": "cpx_classement_administratif",
+                  "default": "false"
+                },
+                {
+                  "key": "cpx_gestionnaire",
+                  "column": "cpx_gestionnaire",
+                  "default": "false"
+                }
+              ]
+            }
+          },
+          "costs": [
+            {
+              "profile": "car",
+              "optimization": "fastest",
+              "costType": "time",
+              "costColumn": "cost_s_car",
+              "rcostColumn": "reverse_cost_s_car",
+              "compute": {
+                "storage": {
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                },
+                "configuration": {
+                  "name": "cost_s_car",
+                  "storage": {
+                    "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                  }
+                }
+              }
+            },
+            {
+              "profile": "car",
+              "optimization": "shortest",
+              "costType": "distance",
+              "costColumn": "cost_m_car",
+              "rcostColumn": "reverse_cost_m_car",
+              "compute": {
+                "storage": {
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                },
+                "configuration": {
+                  "name": "cost_m_car",
+                  "storage": {
+                    "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                  }
+                }
+              }
+            },
+            {
+              "profile": "pedestrian",
+              "optimization": "fastest",
+              "costType": "time",
+              "costColumn": "cost_s_pedestrian",
+              "rcostColumn": "reverse_cost_s_pedestrian",
+              "compute": {
+                "storage": {
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                },
+                "configuration": {
+                  "name": "cost_s_pedestrian",
+                  "storage": {
+                    "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                  }
+                }
+              }
+            },
+            {
+              "profile": "pedestrian",
+              "optimization": "shortest",
+              "costType": "distance",
+              "costColumn": "cost_m_pedestrian",
+              "rcostColumn": "reverse_cost_m_pedestrian",
+              "compute": {
+                "storage": {
+                  "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                },
+                "configuration": {
+                  "name": "cost_m_pedestrian",
+                  "storage": {
+                    "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/config/costs_calculation.json"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "topology_old": {
         "id": "base-bdtopo",
-        "type": "db",
         "description": "Données issues de la BDTOPO de l'IGN.",
+        "type": "db",
+        "projection": "EPSG:4326",
+        "bbox": "-90,-180,90,180",
+        "mapping": {
+          "source": {
+            "baseId": "bdtopo"
+          },
+          "storage": {
+            "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/sql/bdtopo_convert.sql"
+          }
+        },
         "storage": {
           "base": {
             "dbConfig": "/home/frozar/wk/flaxib/wk/route-graph-generator/frozar/secrets/db_config_output.json",
-            "schema": "public",
             "attributes": [
               {
                 "key": "name",
@@ -204,21 +470,11 @@
           },
           "baseId": "base_sortie"
         },
-        "projection": "EPSG:4326",
-        "bbox": "-90,-180,90,180",
-        "mapping": {
-          "source": {
-            "baseId": "bdtopo"
-          },
-          "storage": {
-            "file": "/home/frozar/wk/flaxib/wk/route-graph-generator/sql/bdtopo_convert.sql"
-          }
-        },
         "defaultAttributes": [
           "nom_1_gauche", "nom_1_droite", "cpx_numero", "cpx_toponyme_route_nommee"
         ]
       },
-      "sources": [
+      "sources_old": [
         {
           "id": "bdtopo-car-fastest-pgr",
           "type": "pgr",

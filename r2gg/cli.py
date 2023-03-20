@@ -20,6 +20,7 @@ from r2gg._main import sql_convert, pgr_convert, osm_convert, osrm_convert, valh
 # ################################
 def sql2pivot():
     config, resource, db_configs, logger = configure()
+    print(db_configs)
     connection = connect_working_db(config, db_configs, logger)
     sql_convert(config, resource, db_configs, connection, logger)
     disconnect_working_db(connection, logger)

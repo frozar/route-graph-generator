@@ -78,6 +78,7 @@ def sql_convert(config, resource, db_configs, connection, logger):
             logger.info("Mapping not done")
 
         # Configuration de la bdd source
+        # print(source)
         source_db_config = db_configs[ source['mapping']['source']['baseId'] ]
         used_bases.append(source['mapping']['source']['baseId'])
 
